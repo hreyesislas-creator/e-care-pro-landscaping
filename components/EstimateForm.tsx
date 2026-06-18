@@ -20,9 +20,19 @@ export function EstimateForm({
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    if (status === "submitting") return; // prevent duplicate submissions
     const form = e.currentTarget;
     const data = Object.fromEntries(new FormData(form).entries());
     if (data.company) return; // honeypot tripped
+    // Validate required fields client-side (form uses noValidate).
+    if (
+      !String(data.name ?? "").trim() ||
+      !String(data.phone ?? "").trim() ||
+      !String(data.service ?? "").trim()
+    ) {
+      setStatus("error");
+      return;
+    }
     setStatus("submitting");
     try {
       const res = await fetch("/api/estimate", {

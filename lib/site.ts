@@ -18,7 +18,7 @@ export const site = {
   description:
     "E-Care Pro Landscaping is a premium, licensed & insured landscaping contractor serving Bay Point and all of Contra Costa County, CA. Landscaping, irrigation, fences, pavers, tree services, yard cleanups & property maintenance for residential and commercial properties.",
   url: SITE_URL,
-  email: "info@ecareprolandscaping.com",
+  email: "guillermo71m@gmail.com",
   phones: [
     { label: "Main", display: "(925) 464-9129", tel: "+19254649129" },
     { label: "Alternate", display: "(925) 768-1363", tel: "+19257681363" },
