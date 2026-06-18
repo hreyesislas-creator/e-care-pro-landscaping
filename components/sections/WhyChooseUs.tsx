@@ -1,5 +1,6 @@
 import { SectionHeading } from "@/components/SectionHeading";
 import { Reveal } from "@/components/Reveal";
+import { Photo } from "@/components/Photo";
 import { Icon } from "@/components/Icon";
 import { CallButton } from "@/components/Buttons";
 import { whyChooseUs } from "@/lib/data";
@@ -8,7 +9,7 @@ export function WhyChooseUs() {
   return (
     <section id="why" className="bg-white py-20 sm:py-28 scroll-mt-24">
       <div className="container-x grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
-        <div className="lg:sticky lg:top-28 lg:self-start">
+        <div>
           <SectionHeading
             eyebrow="Why E-Care Pro"
             title={
@@ -20,7 +21,18 @@ export function WhyChooseUs() {
             intro="We combine agency-level design with contractor-grade craftsmanship — and treat every property like it's our own. That's how we've earned a 5-star reputation across Contra Costa County."
           />
 
-          <Reveal className="mt-8 rounded-3xl bg-forest p-7 text-white shadow-card" delay={2}>
+          <Reveal className="mt-8" delay={1}>
+            <Photo
+              src="/images/why-choose-us.png"
+              alt="Stunning luxury California estate landscape designed and built by E-Care Pro Landscaping"
+              sizes="(max-width:1024px) 100vw, 45vw"
+              quality={82}
+              ratio="4 / 5"
+              className="shadow-card"
+            />
+          </Reveal>
+
+          <Reveal className="mt-6 rounded-3xl bg-forest p-7 text-white shadow-card" delay={2}>
             <div className="flex items-center gap-3">
               <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 text-fresh-light">
                 <Icon name="shield" className="h-6 w-6" />

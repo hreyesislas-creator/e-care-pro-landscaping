@@ -1,6 +1,9 @@
 /**
- * Central business / NAP (Name, Address, Phone) configuration.
- * Single source of truth for SEO, schema, and UI.
+ * Central business configuration (single source of truth for SEO, schema, and UI).
+ *
+ * NOTE: E-Care Pro Landscaping is a SERVICE-AREA business. No public street
+ * address, postal code, or geo coordinates are published anywhere on the site
+ * or in structured data — only the service areas it covers.
  */
 
 export const SITE_URL =
@@ -20,19 +23,14 @@ export const site = {
     { label: "Main", display: "(925) 464-9129", tel: "+19254649129" },
     { label: "Alternate", display: "(925) 768-1363", tel: "+19257681363" },
   ],
-  address: {
-    street: "172 Cleveland Ave",
-    city: "Bay Point",
-    region: "CA",
-    regionName: "California",
-    postalCode: "94565",
-    country: "US",
-    full: "172 Cleveland Ave, Bay Point, CA 94565",
-  },
-  geo: {
-    latitude: 38.0282,
-    longitude: -121.9466,
-  },
+  // Service-area only — base city for "serving from" wording, never a street address.
+  baseCity: "Bay Point",
+  region: "CA",
+  regionName: "California",
+  country: "US",
+  serviceAreaShort: "Serving Bay Point and surrounding Contra Costa County communities.",
+  serviceAreaLong:
+    "E-Care Pro Landscaping serves Bay Point, Pittsburg, Antioch, Concord, Martinez, Pleasant Hill, Walnut Creek, Brentwood, Oakley, and surrounding Contra Costa County areas.",
   hours: [
     { day: "Monday", open: "07:00", close: "18:00" },
     { day: "Tuesday", open: "07:00", close: "18:00" },

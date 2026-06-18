@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   category: "Landscaping Contractor",
-  formatDetection: { telephone: true, address: true, email: true },
+  formatDetection: { telephone: true, address: false, email: true },
   openGraph: {
     type: "website",
     locale: "en_US",

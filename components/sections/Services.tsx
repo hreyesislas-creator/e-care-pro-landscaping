@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Reveal } from "@/components/Reveal";
-import { Visual } from "@/components/Visual";
+import { Photo } from "@/components/Photo";
 import { Icon } from "@/components/Icon";
 import { services } from "@/lib/data";
 
@@ -28,11 +28,13 @@ export function Services() {
                 href={`/services/${s.slug}`}
                 className="group flex h-full flex-col overflow-hidden rounded-3xl bg-white shadow-card ring-1 ring-black/[0.03] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lift"
               >
-                <Visual
-                  gradient={s.gradient}
-                  icon={s.icon}
+                <Photo
+                  src={`/images/services/${s.slug}.png`}
+                  alt={`${s.name} by E-Care Pro Landscaping in Contra Costa County, CA`}
+                  sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw"
                   rounded="rounded-none"
-                  className="!aspect-[16/10]"
+                  ratio="16 / 10"
+                  className="transition-transform duration-700 group-hover:scale-[1.04]"
                 />
                 <div className="flex flex-1 flex-col p-6">
                   <h3 className="font-display text-xl font-extrabold text-charcoal">{s.name}</h3>

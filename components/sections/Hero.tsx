@@ -1,96 +1,101 @@
+import Image from "next/image";
+import Link from "next/link";
 import { Icon } from "@/components/Icon";
-import { CallButton } from "@/components/Buttons";
-import { EstimateForm } from "@/components/EstimateForm";
-import { site } from "@/lib/site";
-
-const chips = [
-  { icon: "shield" as const, label: "Licensed & Insured" },
-  { icon: "map" as const, label: "Locally Owned" },
-  { icon: "star" as const, label: "4.9★ Rated" },
-];
+import { site, primaryPhone } from "@/lib/site";
 
 export function Hero() {
   return (
-    <section className="relative isolate overflow-hidden bg-forest-darker pt-[var(--header-h)] text-white">
-      {/* Background layers */}
+    <section className="relative isolate flex min-h-[100svh] items-center overflow-hidden bg-charcoal text-white">
+      {/* Full-bleed hero photograph */}
+      <Image
+        src="/images/hero.png"
+        alt="Luxury California residential property with manicured lawn, custom paver walkway, and premium landscaping at golden hour in Contra Costa County"
+        fill
+        priority
+        sizes="100vw"
+        quality={82}
+        className="object-cover"
+        style={{ objectPosition: "center 45%" }}
+      />
+
+      {/* Dark gradient overlays for legibility */}
       <div
-        className="absolute inset-0 -z-10"
+        className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(120% 90% at 15% 0%, #1b5e20 0%, #103d16 45%, #0a2c10 100%)",
+            "linear-gradient(90deg, rgba(10,28,14,0.86) 0%, rgba(10,28,14,0.62) 42%, rgba(10,28,14,0.18) 100%)",
         }}
         aria-hidden="true"
       />
-      <div className="absolute inset-0 -z-10 bg-grain opacity-60" aria-hidden="true" />
-      <svg
-        className="absolute inset-0 -z-10 h-full w-full opacity-[0.12]"
-        viewBox="0 0 1200 600"
-        preserveAspectRatio="xMidYMid slice"
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            "linear-gradient(0deg, rgba(8,22,11,0.85) 0%, rgba(8,22,11,0.10) 45%, rgba(8,22,11,0.30) 100%)",
+        }}
         aria-hidden="true"
-      >
-        <g fill="none" stroke="#ffffff" strokeWidth="2">
-          <path d="M-50 120 C 300 40, 500 220, 850 120 S 1300 60, 1300 140" />
-          <path d="M-50 220 C 300 140, 500 320, 850 220 S 1300 160, 1300 240" />
-          <path d="M-50 320 C 300 240, 500 420, 850 320 S 1300 260, 1300 340" />
-          <path d="M-50 420 C 300 340, 500 520, 850 420 S 1300 360, 1300 440" />
-          <path d="M-50 520 C 300 440, 500 620, 850 520 S 1300 460, 1300 540" />
-        </g>
-      </svg>
+      />
 
-      <div className="container-x grid items-center gap-10 py-14 sm:py-20 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12 lg:py-24">
-        {/* Copy */}
-        <div className="reveal max-w-xl">
-          <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-semibold tracking-wide text-fresh-light backdrop-blur-sm">
+      {/* Content */}
+      <div className="container-x relative z-10 w-full pt-[calc(var(--header-h)+2rem)] pb-16 sm:pb-20">
+        <div className="max-w-2xl">
+          <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-semibold tracking-wide text-white backdrop-blur-sm">
             <span className="flex h-2 w-2 rounded-full bg-fresh-light" />
-            Serving Bay Point &amp; all of Contra Costa County
+            Premium Landscaping Contractor · Bay Point, CA
           </div>
 
-          <h1 className="mt-5 font-display text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-5xl lg:text-[3.5rem]">
-            Premium Landscaping
-            <span className="block text-fresh-light">Built to Impress.</span>
-            <span className="block">Made to Last.</span>
+          <h1 className="mt-6 font-display text-[2.6rem] font-extrabold leading-[1.03] tracking-tight sm:text-6xl lg:text-[4.25rem]">
+            We Transform
+            <span className="block text-fresh-light">Properties.</span>
           </h1>
 
-          <p className="mt-5 max-w-lg text-lg leading-relaxed text-white/80">
+          <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/85 sm:text-xl">
             Award-worthy landscape design, pavers, irrigation, fencing, and tree services for
-            discerning homeowners and businesses across the East Bay. Licensed, insured, and
-            obsessed with the details.
+            discerning homeowners and businesses across Contra Costa County. Licensed, insured,
+            and obsessed with the details.
           </p>
 
-          <div className="mt-7 flex flex-wrap gap-3">
-            <CallButton size="lg" />
-            <a
-              href="#projects"
-              className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-white/25 px-7 py-4 font-display font-bold text-white transition hover:bg-white/10"
+          {/* Review rating */}
+          <div className="mt-7 flex flex-wrap items-center gap-x-4 gap-y-2">
+            <span className="flex text-gold" aria-hidden="true">
+              {Array.from({ length: 5 }).map((_, i) => (
+                <Icon key={i} name="star" className="h-5 w-5" strokeWidth={1} />
+              ))}
+            </span>
+            <span className="text-sm font-semibold text-white">
+              <span className="font-display text-base font-extrabold">{site.rating.value}/5</span>{" "}
+              from {site.rating.count}+ happy customers
+            </span>
+          </div>
+
+          {/* CTAs */}
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+            <Link
+              href="#estimate"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-gold px-8 py-4 font-display text-base font-bold tracking-tight text-charcoal shadow-lift transition hover:bg-gold-light hover:-translate-y-0.5"
             >
-              View Our Work
+              <Icon name="sparkle" className="h-5 w-5" /> Get a Free Estimate
+            </Link>
+            <a
+              href={`tel:${primaryPhone.tel}`}
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-white/10 px-8 py-4 font-display text-base font-bold tracking-tight text-white ring-1 ring-white/30 backdrop-blur-sm transition hover:bg-white/20"
+              aria-label={`Call E-Care Pro Landscaping at ${primaryPhone.display}`}
+            >
+              <Icon name="phone" className="h-5 w-5" /> Call {primaryPhone.display}
             </a>
           </div>
 
-          <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-3">
-            {chips.map((c) => (
-              <li key={c.label} className="flex items-center gap-2 text-sm font-semibold text-white/85">
-                <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white/10 text-fresh-light">
-                  <Icon name={c.icon} className="h-4 w-4" />
-                </span>
-                {c.label}
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        {/* Estimate form — above the fold */}
-        <div className="reveal reveal-delay-2 lg:justify-self-end lg:w-full lg:max-w-md" id="estimate-hero">
-          <EstimateForm compact />
+          {/* Service area text */}
+          <p className="mt-8 flex items-start gap-2 text-sm text-white/75">
+            <Icon name="map" className="mt-0.5 h-4 w-4 shrink-0 text-fresh-light" />
+            <span>
+              Proudly serving Bay Point, Pittsburg, Antioch, Concord, Walnut Creek, Brentwood,
+              Martinez, Pleasant Hill, Oakley &amp; all of Contra Costa County.
+            </span>
+          </p>
         </div>
       </div>
 
-      {/* Bottom curve into next section */}
-      <div className="relative">
-        <svg className="block h-[40px] w-full sm:h-[64px]" viewBox="0 0 1440 64" preserveAspectRatio="none" aria-hidden="true">
-          <path d="M0 64 L1440 64 L1440 0 C 1080 56, 360 56, 0 0 Z" fill="#f6f7f5" />
-        </svg>
-      </div>
       <span className="sr-only">{site.tagline}</span>
     </section>
   );

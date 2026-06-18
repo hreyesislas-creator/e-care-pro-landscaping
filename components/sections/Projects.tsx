@@ -1,8 +1,15 @@
 import Link from "next/link";
+import { existsSync } from "node:fs";
+import { join } from "node:path";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Reveal } from "@/components/Reveal";
-import { Visual } from "@/components/Visual";
+import { Photo } from "@/components/Photo";
 import { projects } from "@/lib/data";
+
+// Only show projects whose image asset actually exists in /public (server-side check at build).
+const availableProjects = projects.filter((p) =>
+  existsSync(join(process.cwd(), "public", p.image))
+);
 
 export function Projects() {
   return (
@@ -31,12 +38,13 @@ export function Projects() {
         </div>
 
         <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {projects.map((p, i) => (
+          {availableProjects.map((p, i) => (
             <Reveal key={p.title} delay={((i % 3) + 1) as 1 | 2 | 3}>
               <div className="group relative h-full overflow-hidden rounded-3xl ring-1 ring-white/10 transition-all duration-300 hover:ring-white/30">
-                <Visual
-                  gradient={p.gradient}
-                  icon={p.icon}
+                <Photo
+                  src={p.image}
+                  alt={`${p.title} — ${p.category} project by E-Care Pro Landscaping in ${p.city}, CA`}
+                  sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw"
                   label={p.title}
                   sublabel={`${p.category} · ${p.city}`}
                   rounded="rounded-none"

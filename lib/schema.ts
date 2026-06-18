@@ -31,20 +31,13 @@ export function localBusinessSchema() {
     foundingDate: site.founded,
     currenciesAccepted: "USD",
     paymentAccepted: "Cash, Check, Credit Card",
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: site.address.street,
-      addressLocality: site.address.city,
-      addressRegion: site.address.region,
-      postalCode: site.address.postalCode,
-      addressCountry: site.address.country,
-    },
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: site.geo.latitude,
-      longitude: site.geo.longitude,
-    },
-    hasMap: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(site.address.full)}`,
+    // Service-area business: no streetAddress / PostalAddress / geo / hasMap published.
+    serviceArea: [
+      { "@type": "AdministrativeArea", name: "Contra Costa County, California" },
+      ...cities
+        .filter((c) => !c.isCounty)
+        .map((c) => ({ "@type": "City", name: `${c.name}, CA` })),
+    ],
     telephoneNumbers: site.phones.map((p) => p.tel),
     contactPoint: site.phones.map((p) => ({
       "@type": "ContactPoint",

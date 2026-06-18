@@ -34,6 +34,9 @@ export function Footer() {
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/65">
             {site.description}
           </p>
+          <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/70">
+            {site.serviceAreaLong}
+          </p>
           <div className="mt-5 flex items-center gap-2 text-sm font-semibold text-fresh-light">
             <Icon name="shield" className="h-5 w-5" /> Licensed &amp; Insured
           </div>
@@ -82,11 +85,7 @@ export function Footer() {
             </li>
             <li className="flex items-start gap-2">
               <Icon name="map" className="mt-0.5 h-4 w-4 shrink-0 text-fresh-light" />
-              <address className="not-italic">
-                {site.address.street}
-                <br />
-                {site.address.city}, {site.address.region} {site.address.postalCode}
-              </address>
+              <span>Serving Bay Point &amp; surrounding Contra Costa County</span>
             </li>
             <li className="flex items-center gap-2">
               <Icon name="clock" className="h-4 w-4 text-fresh-light" /> {site.hoursLabel}

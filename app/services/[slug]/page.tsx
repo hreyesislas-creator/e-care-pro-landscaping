@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { PageHero } from "@/components/PageHero";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Reveal } from "@/components/Reveal";
-import { Visual } from "@/components/Visual";
+import { Photo } from "@/components/Photo";
 import { Icon } from "@/components/Icon";
 import { Reviews } from "@/components/sections/Reviews";
 import { Faq } from "@/components/sections/Faq";
@@ -89,7 +89,13 @@ export default async function ServicePage({
       <section className="bg-cream py-20 sm:py-28">
         <div className="container-x grid items-start gap-12 lg:grid-cols-2 lg:gap-16">
           <Reveal>
-            <Visual gradient={service.gradient} icon={service.icon} className="shadow-card" />
+            <Photo
+              src={`/images/services/${service.slug}.png`}
+              alt={`${service.name} by E-Care Pro Landscaping in Bay Point & Contra Costa County, CA`}
+              sizes="(max-width:1024px) 100vw, 50vw"
+              quality={82}
+              className="shadow-card"
+            />
           </Reveal>
           <div>
             <SectionHeading
@@ -171,7 +177,13 @@ export default async function ServicePage({
                   href={`/services/${s.slug}`}
                   className="group flex h-full flex-col overflow-hidden rounded-3xl bg-cream shadow-card transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lift"
                 >
-                  <Visual gradient={s.gradient} icon={s.icon} rounded="rounded-none" className="!aspect-[16/9]" />
+                  <Photo
+                    src={`/images/services/${s.slug}.png`}
+                    alt={`${s.name} by E-Care Pro Landscaping`}
+                    sizes="(max-width:640px) 100vw, 33vw"
+                    rounded="rounded-none"
+                    ratio="16 / 9"
+                  />
                   <div className="flex flex-1 flex-col p-5">
                     <h3 className="font-display text-lg font-extrabold text-charcoal">{s.name}</h3>
                     <p className="mt-1.5 flex-1 text-sm text-charcoal-light">{s.excerpt}</p>

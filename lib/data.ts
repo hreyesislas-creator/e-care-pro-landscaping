@@ -20,7 +20,6 @@ export type City = {
   slug: string;
   name: string;
   isCounty?: boolean;
-  zip?: string;
   blurb: string; // short, used on cards
   intro: string; // long-form for city page
   landmarks: string[];
@@ -290,7 +289,6 @@ export const cities: City[] = [
   {
     slug: "bay-point",
     name: "Bay Point",
-    zip: "94565",
     blurb:
       "Our hometown. Fast, local crews for landscaping, pavers, fences, and full property care.",
     intro:
@@ -579,15 +577,18 @@ export type Project = {
   title: string;
   category: string;
   city: string;
+  image: string;
   gradient: [string, string];
   icon: IconName;
 };
 
 export const projects: Project[] = [
-  { title: "Modern Paver Patio & Fire Pit", category: "Paver Installation", city: "Bay Point", gradient: ["#6b4a2b", "#c8a24a"], icon: "paver" },
-  { title: "Drought-Smart Front Yard", category: "Landscape Design", city: "Antioch", gradient: ["#1b5e20", "#66bb6a"], icon: "leaf" },
-  { title: "Redwood Privacy Fence", category: "Fence Installation", city: "Concord", gradient: ["#5a3b1a", "#a9742f"], icon: "fence" },
-  { title: "Smart Drip Irrigation Retrofit", category: "Irrigation", city: "Brentwood", gradient: ["#0f5c5c", "#43a047"], icon: "droplet" },
-  { title: "Backyard Living Transformation", category: "Landscape Build", city: "Walnut Creek", gradient: ["#234d20", "#7cb342"], icon: "sparkle" },
-  { title: "Oak Canopy Pruning & Cleanup", category: "Tree Services", city: "Martinez", gradient: ["#2e4d24", "#5a8f3c"], icon: "tree" },
+  { title: "Modern Paver Patio & Fire Pit", category: "Paver Installation", city: "Bay Point", image: "/images/projects/project-01.png", gradient: ["#6b4a2b", "#c8a24a"], icon: "paver" },
+  { title: "Drought-Smart Front Yard", category: "Landscape Design", city: "Antioch", image: "/images/projects/project-02.png", gradient: ["#1b5e20", "#66bb6a"], icon: "leaf" },
+  { title: "Redwood Privacy Fence", category: "Fence Installation", city: "Concord", image: "/images/projects/project-03.png", gradient: ["#5a3b1a", "#a9742f"], icon: "fence" },
+  { title: "Custom Paver Driveway", category: "Paver Installation", city: "Walnut Creek", image: "/images/projects/project-04.png", gradient: ["#0f5c5c", "#43a047"], icon: "paver" },
+  { title: "Backyard Living Transformation", category: "Landscape Build", city: "Pleasant Hill", image: "/images/projects/project-05.png", gradient: ["#234d20", "#7cb342"], icon: "sparkle" },
+  { title: "Oak Canopy Pruning & Cleanup", category: "Tree Services", city: "Martinez", image: "/images/projects/project-06.png", gradient: ["#2e4d24", "#5a8f3c"], icon: "tree" },
+  { title: "Travertine Pool Deck", category: "Hardscape", city: "Brentwood", image: "/images/projects/project-07.png", gradient: ["#0f5c5c", "#43a047"], icon: "paver" },
+  { title: "Commercial / HOA Frontage", category: "Property Maintenance", city: "Concord", image: "/images/projects/project-08.png", gradient: ["#1b5e20", "#2e7d32"], icon: "calendar" },
 ];
