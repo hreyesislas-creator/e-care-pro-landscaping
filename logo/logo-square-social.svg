@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600" role="img" aria-label="E-Care Pro Landscaping social avatar">
+  <!-- Brand background -->
+  <rect width="600" height="600" rx="96" fill="#1B5E20"/>
+
+  <!-- Icon (white). House negative space lets the green background read as the house. -->
+  <g transform="translate(180,70) scale(2.0)">
+    <path fill="#FFFFFF" fill-rule="evenodd"
+          d="M60 12 Q104 60 60 108 Q16 60 60 12 Z
+             M60 50 L76 64 L76 90 L44 90 L44 64 Z"/>
+    <line x1="60" y1="15" x2="60" y2="49" stroke="#43A047" stroke-width="3.4" stroke-linecap="round"/>
+    <rect x="54.5" y="73" width="11" height="17" fill="#43A047"/>
+  </g>
+
+  <!-- Wordmark -->
+  <text x="300" y="450" text-anchor="middle"
+        font-family="'Montserrat','Arial Black',Arial,sans-serif"
+        font-weight="800" font-size="74" letter-spacing="-1" fill="#FFFFFF">E-CARE PRO</text>
+  <text x="300" y="505" text-anchor="middle"
+        font-family="'Montserrat',Arial,sans-serif"
+        font-weight="600" font-size="27" letter-spacing="13" fill="#43A047">LANDSCAPING</text>
+</svg>

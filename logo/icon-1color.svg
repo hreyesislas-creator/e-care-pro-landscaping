@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" role="img" aria-label="E-Care Pro Landscaping mark, one color">
+  <!-- Single-color mark. Set color via `color:` (uses currentColor) or replace `currentColor`. -->
+  <g fill="currentColor" color="#1B5E20">
+    <!-- Leaf with negative-space house cut out -->
+    <path fill-rule="evenodd"
+          d="M60 12 Q104 60 60 108 Q16 60 60 12 Z
+             M60 50 L76 64 L76 90 L44 90 L44 64 Z"/>
+    <!-- Doorway keeps the house silhouette legible at tiny sizes / one ink -->
+    <rect x="54.5" y="73" width="11" height="17"/>
+  </g>
+</svg>

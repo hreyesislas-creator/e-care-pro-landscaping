@@ -1,0 +1,41 @@
+{
+  "$comment": "Machine-readable image blueprint for E-Care Pro Landscaping. Generate each `path`, place the file, then run the integration pass. See /IMAGE-ASSET-SPECIFICATION.md for full prompts.",
+  "version": 1,
+  "sizesTokens": {
+    "FULLBLEED": "100vw",
+    "CARD_3COL": "(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw",
+    "HALF": "(max-width:768px) 100vw, 50vw",
+    "FEATURE": "(max-width:1024px) 100vw, 45vw"
+  },
+  "images": [
+    { "id": "hero", "path": "/images/hero.png", "section": "Hero", "component": "components/sections/Hero.tsx", "width": 2400, "height": 1600, "ratio": "3:2", "load": "priority", "quality": 82, "sizes": "FULLBLEED", "objectPosition": "center 45%", "mobileSafeArea": "center 60%", "optional": false },
+    { "id": "hero-mobile", "path": "/images/hero-mobile.png", "section": "Hero (mobile)", "component": "components/sections/Hero.tsx", "width": 1290, "height": 1720, "ratio": "3:4", "load": "priority", "quality": 82, "sizes": "FULLBLEED", "mobileSafeArea": "full frame", "optional": true },
+
+    { "id": "service-landscaping", "path": "/images/services/landscaping.png", "section": "Services", "component": "components/sections/Services.tsx + app/services/[slug]/page.tsx", "serviceSlug": "landscaping", "width": 1600, "height": 1200, "ratio": "4:3", "load": "lazy", "quality": 78, "sizes": "CARD_3COL", "mobileSafeArea": "center 70%", "optional": false },
+    { "id": "service-irrigation", "path": "/images/services/irrigation-systems.png", "section": "Services", "serviceSlug": "irrigation-systems", "width": 1600, "height": 1200, "ratio": "4:3", "load": "lazy", "quality": 78, "sizes": "CARD_3COL", "mobileSafeArea": "center 70%", "optional": false },
+    { "id": "service-fence", "path": "/images/services/fence-installation-repair.png", "section": "Services", "serviceSlug": "fence-installation-repair", "width": 1600, "height": 1200, "ratio": "4:3", "load": "lazy", "quality": 78, "sizes": "CARD_3COL", "mobileSafeArea": "center 70%", "optional": false },
+    { "id": "service-pavers", "path": "/images/services/paver-installation.png", "section": "Services", "serviceSlug": "paver-installation", "width": 1600, "height": 1200, "ratio": "4:3", "load": "lazy", "quality": 78, "sizes": "CARD_3COL", "mobileSafeArea": "center 70%", "optional": false },
+    { "id": "service-tree", "path": "/images/services/tree-services.png", "section": "Services", "serviceSlug": "tree-services", "width": 1600, "height": 1200, "ratio": "4:3", "load": "lazy", "quality": 78, "sizes": "CARD_3COL", "mobileSafeArea": "center 70%", "optional": false },
+    { "id": "service-cleanup", "path": "/images/services/yard-cleanups.png", "section": "Services", "serviceSlug": "yard-cleanups", "width": 1600, "height": 1200, "ratio": "4:3", "load": "lazy", "quality": 78, "sizes": "CARD_3COL", "mobileSafeArea": "center 70%", "optional": false },
+    { "id": "service-maintenance", "path": "/images/services/property-maintenance.png", "section": "Services", "serviceSlug": "property-maintenance", "width": 1600, "height": 1200, "ratio": "4:3", "load": "lazy", "quality": 78, "sizes": "CARD_3COL", "mobileSafeArea": "center 70%", "optional": false },
+
+    { "id": "project-01", "path": "/images/projects/project-01.png", "section": "Projects", "component": "components/sections/Projects.tsx", "title": "Paver Patio & Fire Pit", "width": 1600, "height": 1200, "ratio": "4:3", "load": "lazy", "quality": 78, "sizes": "CARD_3COL", "mobileSafeArea": "center 65%", "optional": false },
+    { "id": "project-02", "path": "/images/projects/project-02.png", "section": "Projects", "title": "Drought-Smart Front Yard", "width": 1600, "height": 1200, "ratio": "4:3", "load": "lazy", "quality": 78, "sizes": "CARD_3COL", "mobileSafeArea": "center 65%", "optional": false },
+    { "id": "project-03", "path": "/images/projects/project-03.png", "section": "Projects", "title": "Redwood Privacy Fence", "width": 1600, "height": 1200, "ratio": "4:3", "load": "lazy", "quality": 78, "sizes": "CARD_3COL", "mobileSafeArea": "center 65%", "optional": false },
+    { "id": "project-04", "path": "/images/projects/project-04.png", "section": "Projects", "title": "Paver Driveway", "width": 1600, "height": 1200, "ratio": "4:3", "load": "lazy", "quality": 78, "sizes": "CARD_3COL", "mobileSafeArea": "center 65%", "optional": false },
+    { "id": "project-05", "path": "/images/projects/project-05.png", "section": "Projects", "title": "Backyard Living Transformation", "width": 1600, "height": 1200, "ratio": "4:3", "load": "lazy", "quality": 78, "sizes": "CARD_3COL", "mobileSafeArea": "center 65%", "optional": false },
+    { "id": "project-06", "path": "/images/projects/project-06.png", "section": "Projects", "title": "Oak Canopy Pruning", "width": 1600, "height": 1200, "ratio": "4:3", "load": "lazy", "quality": 78, "sizes": "CARD_3COL", "mobileSafeArea": "center 65%", "optional": false },
+    { "id": "project-07", "path": "/images/projects/project-07.png", "section": "Projects", "title": "Travertine Pool Deck", "width": 1600, "height": 1200, "ratio": "4:3", "load": "lazy", "quality": 78, "sizes": "CARD_3COL", "mobileSafeArea": "center 65%", "optional": false },
+    { "id": "project-08", "path": "/images/projects/project-08.png", "section": "Projects", "title": "Commercial / HOA Frontage", "width": 1600, "height": 1200, "ratio": "4:3", "load": "lazy", "quality": 78, "sizes": "CARD_3COL", "mobileSafeArea": "center 65%", "optional": false },
+
+    { "id": "before", "path": "/images/before-after/landscaping-before.png", "section": "Before/After", "component": "components/BeforeAfter.tsx", "width": 1920, "height": 1280, "ratio": "3:2", "load": "lazy", "quality": 80, "sizes": "HALF", "mobileSafeArea": "center 70%", "pairWith": "after", "optional": false },
+    { "id": "after", "path": "/images/before-after/landscaping-after.png", "section": "Before/After", "component": "components/BeforeAfter.tsx", "width": 1920, "height": 1280, "ratio": "3:2", "load": "lazy", "quality": 80, "sizes": "HALF", "mobileSafeArea": "center 70%", "pairWith": "before", "optional": false },
+
+    { "id": "team-crew", "path": "/images/team/crew.png", "section": "About/Team", "component": "components/sections/WhyChooseUs.tsx (About block)", "width": 1600, "height": 1066, "ratio": "3:2", "load": "lazy", "quality": 80, "sizes": "HALF", "mobileSafeArea": "center 60%", "optional": false },
+    { "id": "why-choose-us", "path": "/images/why-choose-us.png", "section": "Why Choose Us", "component": "components/sections/WhyChooseUs.tsx", "width": 1400, "height": 1750, "ratio": "4:5", "load": "lazy", "quality": 80, "sizes": "FEATURE", "mobileSafeArea": "center 70%", "optional": false },
+    { "id": "service-vehicle", "path": "/images/service-vehicle.png", "section": "Contact", "component": "components/sections/Contact.tsx", "width": 1600, "height": 1066, "ratio": "3:2", "load": "lazy", "quality": 80, "sizes": "FEATURE", "mobileSafeArea": "center 65%", "optional": false },
+
+    { "id": "og-image", "path": "/images/branding/og-image.png", "section": "Social / metadata", "component": "app/layout.tsx metadata (optional override of app/opengraph-image.tsx)", "width": 1200, "height": 630, "ratio": "1.91:1", "load": "metadata", "mobileSafeArea": "center 80%", "optional": true },
+    { "id": "logo-watermark", "path": "/images/branding/logo-watermark.png", "section": "Branding", "format": "png-alpha", "load": "n/a", "optional": true }
+  ]
+}

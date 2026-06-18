@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 150" width="500" height="150" role="img" aria-label="E-Care Pro Landscaping">
+  <!-- ===== Icon ===== -->
+  <g transform="translate(8,15)">
+    <path fill="#1B5E20" fill-rule="evenodd"
+          d="M60 12 Q104 60 60 108 Q16 60 60 12 Z
+             M60 50 L76 64 L76 90 L44 90 L44 64 Z"/>
+    <line x1="60" y1="15" x2="60" y2="49" stroke="#43A047" stroke-width="3" stroke-linecap="round"/>
+    <rect x="54.5" y="73" width="11" height="17" fill="#43A047"/>
+  </g>
+
+  <!-- ===== Wordmark ===== -->
+  <!-- For final production assets, convert text to outlines so the typeface is not required. -->
+  <text x="150" y="80"
+        font-family="'Montserrat','Arial Black',Arial,sans-serif"
+        font-weight="800" font-size="48" letter-spacing="-0.5">
+    <tspan fill="#263238">E-CARE </tspan><tspan fill="#1B5E20">PRO</tspan>
+  </text>
+  <text x="153" y="108"
+        font-family="'Montserrat',Arial,sans-serif"
+        font-weight="600" font-size="17.5" letter-spacing="8.2" fill="#43A047">LANDSCAPING</text>
+</svg>

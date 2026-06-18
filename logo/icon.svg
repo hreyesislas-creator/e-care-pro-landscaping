@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" role="img" aria-label="E-Care Pro Landscaping leaf and house mark">
+  <!-- Leaf body with negative-space house (even-odd cut) -->
+  <path fill="#1B5E20" fill-rule="evenodd"
+        d="M60 12 Q104 60 60 108 Q16 60 60 12 Z
+           M60 50 L76 64 L76 90 L44 90 L44 64 Z"/>
+  <!-- Leaf midrib / growth vein -->
+  <line x1="60" y1="15" x2="60" y2="49" stroke="#43A047" stroke-width="3" stroke-linecap="round"/>
+  <!-- Doorway (sits inside the negative-space house) -->
+  <rect x="54.5" y="73" width="11" height="17" fill="#43A047"/>
+</svg>

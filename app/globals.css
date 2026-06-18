@@ -1,0 +1,159 @@
+@import "tailwindcss";
+
+/* ----------------------------------------------------------------------------
+   E-Care Pro Landscaping — Design tokens
+---------------------------------------------------------------------------- */
+@theme {
+  --color-forest: #1b5e20;
+  --color-forest-dark: #103d16;
+  --color-forest-darker: #0a2c10;
+  --color-fresh: #43a047;
+  --color-fresh-light: #66bb6a;
+  --color-charcoal: #263238;
+  --color-charcoal-light: #37474f;
+  --color-cream: #f6f7f5;
+  --color-sand: #efeee7;
+  --color-gold: #c8a24a;
+  --color-gold-light: #dcc080;
+
+  --font-display: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  --shadow-card: 0 1px 2px rgba(16, 61, 22, 0.04), 0 12px 32px -12px rgba(16, 61, 22, 0.18);
+  --shadow-soft: 0 10px 40px -16px rgba(38, 50, 56, 0.25);
+  --shadow-lift: 0 24px 60px -24px rgba(16, 61, 22, 0.4);
+
+  --radius-xl2: 1.75rem;
+}
+
+/* ----------------------------------------------------------------------------
+   Base
+---------------------------------------------------------------------------- */
+:root {
+  color-scheme: light;
+  scroll-behavior: smooth;
+  --header-h: 76px;
+}
+
+* {
+  scroll-margin-top: calc(var(--header-h) + 16px);
+}
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+body {
+  background: var(--color-cream);
+  color: var(--color-charcoal);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--color-fresh);
+  color: #fff;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Accessible focus ring */
+:where(a, button, input, textarea, select, [tabindex]):focus-visible {
+  outline: 3px solid var(--color-fresh);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* ----------------------------------------------------------------------------
+   Utilities
+---------------------------------------------------------------------------- */
+.container-x {
+  width: 100%;
+  margin-inline: auto;
+  max-width: 80rem;
+  padding-inline: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .container-x {
+    padding-inline: 2rem;
+  }
+}
+
+.text-balance { text-wrap: balance; }
+
+.eyebrow {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+/* Premium thin top hairline gradient */
+.bg-grain {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 4px 4px;
+}
+
+/* ----------------------------------------------------------------------------
+   Animations — reveal on scroll (progressively enhanced, see Reveal.tsx)
+---------------------------------------------------------------------------- */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(22px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes slow-zoom {
+  from { transform: scale(1.08); }
+  to { transform: scale(1); }
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.reveal {
+  opacity: 0;
+}
+.reveal.is-visible {
+  animation: fade-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.reveal-delay-1.is-visible { animation-delay: 0.08s; }
+.reveal-delay-2.is-visible { animation-delay: 0.16s; }
+.reveal-delay-3.is-visible { animation-delay: 0.24s; }
+.reveal-delay-4.is-visible { animation-delay: 0.32s; }
+.reveal-delay-5.is-visible { animation-delay: 0.4s; }
+
+.animate-hero-zoom {
+  animation: slow-zoom 12s ease-out forwards;
+}
+
+.marquee-track {
+  animation: marquee 32s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { scroll-behavior: auto; }
+  .reveal { opacity: 1 !important; animation: none !important; }
+  .animate-hero-zoom,
+  .marquee-track { animation: none !important; }
+}
