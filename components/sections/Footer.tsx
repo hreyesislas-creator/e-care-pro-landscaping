@@ -113,6 +113,21 @@ export function Footer() {
           <p>Landscaping · Irrigation · Fences · Pavers · Tree Services · Contra Costa County</p>
         </div>
       </div>
+
+      {/* Agency signature */}
+      <div className="container-x pb-6 text-center text-[13px] text-white/40">
+        <span>
+          Built by{" "}
+          <a
+            href="https://vuelvetedigital.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-medium text-white/55 underline-offset-4 transition-colors duration-200 hover:text-white/90 hover:underline"
+          >
+            Vuelvete Digital
+          </a>
+        </span>
+      </div>
     </footer>
   );
 }
