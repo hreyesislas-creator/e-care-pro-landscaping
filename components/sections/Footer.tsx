@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Logo } from "@/components/Logo";
+import Image from "next/image";
 import { Icon } from "@/components/Icon";
 import { CallButton, QuoteButton } from "@/components/Buttons";
 import { services, cities } from "@/lib/data";
@@ -30,7 +30,17 @@ export function Footer() {
       {/* Main */}
       <div className="container-x grid gap-10 py-14 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
         <div>
-          <Logo variant="light" />
+          {/* Full-color logo on a white card so it stays readable on the dark footer */}
+          <span className="inline-flex rounded-2xl bg-white p-4 shadow-soft">
+            <Image
+              src="/images/branding/logo-horizontal.png"
+              alt={site.name}
+              width={220}
+              height={64}
+              sizes="240px"
+              className="h-auto w-[240px] object-contain"
+            />
+          </span>
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/65">
             {site.description}
           </p>

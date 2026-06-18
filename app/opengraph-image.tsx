@@ -1,10 +1,17 @@
 import { ImageResponse } from "next/og";
+import { readFileSync } from "fs";
+import { join } from "path";
 import { site } from "@/lib/site";
 
 export const alt =
   "E-Care Pro Landscaping — premium landscaping in Contra Costa County, CA";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
+
+// Final brand mark, embedded as a data URI so Satori can render it.
+const logoMark = `data:image/png;base64,${readFileSync(
+  join(process.cwd(), "public/images/branding/logo-vertical.png")
+).toString("base64")}`;
 
 export default function OgImage() {
   return new ImageResponse(
@@ -24,14 +31,8 @@ export default function OgImage() {
       >
         {/* Brand row */}
         <div style={{ display: "flex", alignItems: "center", gap: 24 }}>
-          <svg width="92" height="92" viewBox="0 0 120 120">
-            <path
-              fill="#ffffff"
-              fillRule="evenodd"
-              d="M60 12 Q104 60 60 108 Q16 60 60 12 Z M60 50 L76 64 L76 90 L44 90 L44 64 Z"
-            />
-            <rect x="54.5" y="73" width="11" height="17" fill="#43a047" />
-          </svg>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={logoMark} width={104} height={104} alt="" />
           <div style={{ display: "flex", flexDirection: "column" }}>
             <div style={{ fontSize: 40, fontWeight: 800, color: "#fff", letterSpacing: -1 }}>
               E-CARE PRO

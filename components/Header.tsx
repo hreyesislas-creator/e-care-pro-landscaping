@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useState } from "react";
-import { Logo } from "@/components/Logo";
 import { Icon } from "@/components/Icon";
 import { primaryPhone, site } from "@/lib/site";
 
@@ -44,7 +44,24 @@ export function Header() {
     >
       <div className="container-x flex h-full items-center justify-between">
         <Link href="/" aria-label={`${site.name} home`} className="shrink-0">
-          <Logo />
+          {/* Full-color logo. When the header is transparent over the dark hero,
+              sit it on a white pill so it stays readable; on scroll the header
+              itself is white, so the logo sits on white directly. */}
+          <span
+            className={`inline-flex items-center rounded-xl transition-all duration-300 ${
+              scrolled ? "" : "bg-white/92 px-3 py-1.5 shadow-soft backdrop-blur-sm"
+            }`}
+          >
+            <Image
+              src="/images/branding/logo-horizontal.png"
+              alt={site.name}
+              width={220}
+              height={64}
+              priority
+              sizes="(max-width: 1024px) 160px, 220px"
+              className="h-auto w-[160px] object-contain lg:w-[220px]"
+            />
+          </span>
         </Link>
 
         <nav className="hidden items-center gap-7 lg:flex" aria-label="Primary">
